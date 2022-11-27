@@ -1,4 +1,4 @@
-name: Hello World
+name: Desafio_2
 
 on:
   pull_request:

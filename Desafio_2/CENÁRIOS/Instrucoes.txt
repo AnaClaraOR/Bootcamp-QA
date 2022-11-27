@@ -1,0 +1,14 @@
+Pré-requisitos:
+    - Ter o Python instalado na máquina;
+    - Ter o pip instalado na máquina;
+    - Ter o Robot Framework instalado na máquina;
+    - Ter um editor de textos na máquina, ex: Visual Studio;
+    - Ter a biblioteca SeleniumLibrary instalada;
+    - Ter a biblioteca FakerLibrary instalada;
+    - Ter a biblioteca Collections instalada
+
+Na execução dos testes foi realizado utilizando:
+    - Ubuntu 20.04.5 LTS;
+    - Python 3.8.10;
+    - pip 20.0.2 from /usr/lib/python3/dist-packages/pip (python 3.8)
+    - Visual Studio version: 1.72.2

@@ -1,0 +1,68 @@
+#language: pt-br
+Funcionalidade: LOGIN
+    Para quando um usuário for logar
+    Eu, como usuário
+    Desejo entrar no sistema
+
+CENÁRIO 1: Login sem sucesso
+    OBJETIVO: Acessar o sistema sem está cadastrado
+
+    PRÉ-CONDIÇÕES: 1 - Não está casdatrado no sistema
+
+    PASSOS: Dado que o usuário não está cadastrado
+            E está na tela de login
+            Quando digitar o Email 
+            E quando digitar a Senha
+            E clicar no botão Entrar
+            Então irá apresentar um alerta Problemas com o login do usuário
+
+CENÁRIO 2: Login com email obrigatório
+    OBJETIVO: Acessar o sistema sem adicionar o email
+
+    PRÉ-CONDIÇÕES: 1 - Está ou não cadastrado no sistema
+                   2 - Não informar o email
+
+    PASSOS: Dado que o usuário está cadastrado 
+            E está na tela de login
+            Quando digitar a Senha
+            E clicar no botão Entrar
+            Então irá apresentar um alerta Email é um campo obrigatório
+
+CENÁRIO 3: Login com senha obrigatória
+    OBJETIVO: Acessar o sistema sem adicionar a senha
+
+    PRÉ-CONDIÇÕES: 1 - Está ou não cadastrado no sistema
+                   2 - Não informar a senha
+
+    PASSOS: Dado que o usuário está cadastrado 
+            E está na tela de login
+            Quando digitar o Email
+            E clicar no botão Entrar
+            Então irá apresentar um alerta Senha é um campo obrigatório
+
+CENÁRIO 4: Login com campos obrigatórios
+    OBJETIVO: Acessar o sistema sem preencher os campos de acesso
+
+    PRÉ-CONDIÇÕES: 1 - Está ou não cadastrado no sistema
+                   2 - Não informar o email
+                   3 - Não informar a senha
+
+    PASSOS: Dado que o usuário está cadastrado 
+            E está na tela de login
+            Quando clicar no botão Entrar
+            Então irá apresentar os alertas Email é um campo obrigatório 
+            E Senha é um campo obrigatório
+
+CENÁRIO 5: Login com sucesso
+    OBJETIVO: Acessar o sistema
+
+    PRÉ-CONDIÇÕES: 1 - Está cadastrado no sistema
+                   2 - Informar o email
+                   3 - Informar a senha
+
+    PASSOS: Dado que o usuário está cadastrado 
+            E está na tela de login
+            Quando digitar o Email
+            E quando digitar a Senha
+            E clicar no botão Entrar
+            Então irá para a tela Home do sistema

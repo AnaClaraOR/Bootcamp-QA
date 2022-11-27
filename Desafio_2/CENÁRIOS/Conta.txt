@@ -1,0 +1,87 @@
+#language: pt-br
+Funcionalidade: Conta
+    Para quando um usuário adicionar uma conta
+    Eu, como usuário
+    Desejo adicionar, editar, excluir e listar uma conta
+
+Cenário 1: Adicionar conta
+    OBJETIVO: Realizar a criação de uma conta 
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Não ter sido criada anteriormente
+
+    PASSOS: Dado que o usuário está logado no sistema
+            E está na tela Adicionar conta
+            Quando escrever o nome da conta
+            E clicar em Salvar
+            Então irá apresentar um alerta Conta adicionada com sucesso!
+
+Cenário 2: Adicionar conta sem sucesso
+    OBJETIVO: Realizar a criação de uma conta com o mesmo nome de uma conta anterior 
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Conta criada anteriormente
+
+    PASSOS: Dado que o usuário está logado no sistema
+            E está na tela Adicionar conta
+            Quando escrever o nome da conta
+            E clicar em Salvar
+            Então irá apresentar um alerta Já existe uma conta com esse nome!
+
+Cenário 3: Adicionar conta sem dados
+    OBJETIVO: Realizar a criação de uma conta sem informar os dados
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Não informar o nome da conta
+
+    PASSOS: Dado que o usuário está logado no sistema
+            E está na tela Adicionar conta
+            Quando deixar de escrever o nome da conta
+            E clicar em Salvar
+            Então irá apresentar um alerta Informe o nome da conta
+
+Cenário 4: Listar conta
+    OBJETIVO: Realizar a listagem das contas criadas
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Ter conta criada
+
+    PASSOS: Dado que o usuário está na tela Home
+            E tem uma conta adicionada
+            Quando escolher Listar do menu Contas
+            Então irá para a tela de listar contas do sistema
+
+Cenário 5: Editar conta
+    OBJETIVO: Realizar a edição de uma conta criada anteriormente
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Ter conta criada
+
+    PASSOS: Dado que o usuário está logado no sistema 
+            E está na tela de listar contas
+            Quando clicar no icone de editar 
+            E alterar a conta 
+            Quando clicar no botão de Salvar
+            Então irá apresentar um alerta Conta alterada com sucesso!
+
+Cenário 6: Excluir conta
+    OBJETIVO: Realizar a exclusão de uma conta
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Ter conta criada
+
+    PASSOS: Dado que o usuário está logado no sistema 
+            E está na tela de listar contas
+            Quando clicar no icone de exclusão 
+            Então irá apresentar um alerta Conta removida com sucesso!
+
+Cenário 7: Exclusão sem sucesso
+    OBJETIVO: Realizar a exclusão de uma conta em uso nas movimentações
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Ter conta criada
+
+    PASSOS: Dado que o usuário está logado no sistema
+            E está na tela de listar contas
+            Quando clicar no ícone de exclusão
+            Então irá apresentar um alerta Conta em uso na movimentações

@@ -1,0 +1,23 @@
+#language: pt-br
+Funcionalidade: RESET
+    Para quando um usuário for resetar os dados
+    Eu, como usuário
+    Desejo resetar os dados no sistema
+
+CENÁRIO 1: Reset com sucesso
+    OBJETIVO: Realizar o reset dos dados
+
+    PRÉ-CONDIÇÕES: 1 - Está logado no sistema
+                   2 - Possuir dados no sistema
+
+    PASSOS: Dado que o usuário está cadastrado 
+            E está na tela Home
+            Quando clicar no botão Reset 
+            Então irá apresentar um alerta Dados resetados com sucesso!
+
+    BÔNUS: - Cenário que apresentou uma falha na aplicação, pois ao clicar no botão do reset, 
+           espera-se que os dados das contas da tela do home sejam zerados ao serem resetados 
+           com sucesso, porém os dados permancem os mesmos sem nenhuma alteração apesar de 
+           apresentar o alerta de sucesso "Dados resetados com sucesso!";
+
+           - Falha no report da aplicação.

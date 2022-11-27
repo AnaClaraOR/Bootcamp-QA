@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20221127 12:26:40.441" rpa="false" schemaversion="3">
+<suite id="s1" name="Conta" source="/home/ana/Documentos/Bootcamp_IA/Desafio_2/Conta.robot">
+<kw name="Abre navegador na página de login" library="login_page" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221127 12:26:41.077" level="INFO">Opening browser 'chrome' to base url 'https://seubarriga.wcaquino.me/login'.</msg>
+<status status="PASS" starttime="20221127 12:26:41.076" endtime="20221127 12:26:44.331"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:41.075" endtime="20221127 12:26:44.333"/>
+</kw>
+<test id="s1-t1" name="Cenário 1: Adicionar conta" line="10">
+<kw name="Name" library="FakerLibrary">
+<var>${NOME_CONTA_FAKER}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20221127 12:26:44.339" level="INFO">${NOME_CONTA_FAKER} = Lorenzo Rezende</msg>
+<status status="PASS" starttime="20221127 12:26:44.338" endtime="20221127 12:26:44.340"/>
+</kw>
+<kw name="Entra com o email testeExemplosAcor@gmail.com" library="login_page" sourcename="Entra com o email ${EMAIL}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_LOGIN}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:44.349" level="INFO">Typing text 'testeExemplosAcor@gmail.com' into text field 'css:input[name=email]'.</msg>
+<status status="PASS" starttime="20221127 12:26:44.345" endtime="20221127 12:26:44.570"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:44.344" endtime="20221127 12:26:44.570"/>
+</kw>
+<kw name="Entra com a senha 123@teste" library="login_page" sourcename="Entra com a senha ${SENHA}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SENHA_LOGIN}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:44.574" level="INFO">Typing text '123@teste' into text field 'css:input[name=senha]'.</msg>
+<status status="PASS" starttime="20221127 12:26:44.574" endtime="20221127 12:26:44.753"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:44.573" endtime="20221127 12:26:44.753"/>
+</kw>
+<kw name="Clica no botão Entrar" library="login_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:44.757" level="INFO">Clicking element 'css = .btn'.</msg>
+<status status="PASS" starttime="20221127 12:26:44.756" endtime="20221127 12:26:45.368"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:44.754" endtime="20221127 12:26:45.369"/>
+</kw>
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:45.372" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:45.371" endtime="20221127 12:26:45.476"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:45.369" endtime="20221127 12:26:45.477"/>
+</kw>
+<kw name="Clica no menu Adicionar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_ADICIONAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:45.479" level="INFO">Clicking element 'xpath://a[.='Adicionar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:45.478" endtime="20221127 12:26:45.706"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:45.477" endtime="20221127 12:26:45.707"/>
+</kw>
+<kw name="Entra com o nome da Conta ${NOME_CONTA_FAKER}" library="conta_page" sourcename="Entra com o nome da Conta ${CONTA}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_CONTA}</arg>
+<arg>${CONTA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:45.710" level="INFO">Typing text 'Lorenzo Rezende' into text field 'id=nome'.</msg>
+<status status="PASS" starttime="20221127 12:26:45.709" endtime="20221127 12:26:45.906"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:45.707" endtime="20221127 12:26:45.907"/>
+</kw>
+<kw name="Clica no botão Salvar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:45.909" level="INFO">Clicking element 'css = .btn'.</msg>
+<status status="PASS" starttime="20221127 12:26:45.908" endtime="20221127 12:26:46.399"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:45.907" endtime="20221127 12:26:46.400"/>
+</kw>
+<kw name="Checa alerta de sucesso contém Conta adicionada com sucesso!" library="keywords" sourcename="Checa alerta de sucesso contém ${MENSAGEM_SUCESSO}">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mensagem_obtida}</var>
+<arg>${ALERTA_SUCESSO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:46.453" level="INFO">${mensagem_obtida} = Conta adicionada com sucesso!</msg>
+<status status="PASS" starttime="20221127 12:26:46.402" endtime="20221127 12:26:46.454"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221127 12:26:46.455" endtime="20221127 12:26:46.455"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:46.456" endtime="20221127 12:26:46.457"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:46.458" endtime="20221127 12:26:46.459"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.400" endtime="20221127 12:26:46.459"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:44.334" endtime="20221127 12:26:46.460"/>
+</test>
+<test id="s1-t2" name="Cenário 2: Adicionar conta sem sucesso" line="25">
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:46.466" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:46.465" endtime="20221127 12:26:46.541"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.463" endtime="20221127 12:26:46.541"/>
+</kw>
+<kw name="Clica no menu Adicionar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_ADICIONAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:46.545" level="INFO">Clicking element 'xpath://a[.='Adicionar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:46.544" endtime="20221127 12:26:46.789"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.542" endtime="20221127 12:26:46.790"/>
+</kw>
+<kw name="Entra com o nome da Conta Conta Repetida" library="conta_page" sourcename="Entra com o nome da Conta ${CONTA}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_CONTA}</arg>
+<arg>${CONTA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:46.792" level="INFO">Typing text 'Conta Repetida' into text field 'id=nome'.</msg>
+<status status="PASS" starttime="20221127 12:26:46.791" endtime="20221127 12:26:46.957"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.790" endtime="20221127 12:26:46.957"/>
+</kw>
+<kw name="Clica no botão Salvar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:46.960" level="INFO">Clicking element 'css = .btn'.</msg>
+<status status="PASS" starttime="20221127 12:26:46.959" endtime="20221127 12:26:47.255"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.958" endtime="20221127 12:26:47.256"/>
+</kw>
+<kw name="Checa alerta de erro contém Já existe uma conta com esse nome!" library="keywords" sourcename="Checa alerta de erro contém ${MENSAGEM_ERRO}">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{LISTA_ELEMENTOS}</var>
+<arg>${ALERTA_ERRO}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.285" level="INFO">@{LISTA_ELEMENTOS} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="948d2fd1-693f-4ae9-b60a-3c77b09fa2a1")&gt; ]</msg>
+<status status="PASS" starttime="20221127 12:26:47.258" endtime="20221127 12:26:47.285"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{LISTA}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221127 12:26:47.287" level="INFO">@{LISTA} = [ ]</msg>
+<status status="PASS" starttime="20221127 12:26:47.286" endtime="20221127 12:26:47.288"/>
+</kw>
+<for flavor="IN">
+<var>${elemento}</var>
+<value>@{LISTA_ELEMENTOS}</value>
+<iter>
+<var name="${elemento}">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="948d2fd1-693f-4ae9-b60a-3c77b09fa2a1")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221127 12:26:47.291" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="948d2fd1-693f-4ae9-b60a-3c77b09fa2a1")&gt;</msg>
+<status status="PASS" starttime="20221127 12:26:47.289" endtime="20221127 12:26:47.291"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto_do_elemento}</var>
+<arg>${elemento}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.324" level="INFO">${texto_do_elemento} = Já existe uma conta com esse nome!</msg>
+<status status="PASS" starttime="20221127 12:26:47.291" endtime="20221127 12:26:47.324"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${LISTA}</arg>
+<arg>${texto_do_elemento}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221127 12:26:47.325" endtime="20221127 12:26:47.325"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.289" endtime="20221127 12:26:47.325"/>
+</iter>
+<status status="PASS" starttime="20221127 12:26:47.288" endtime="20221127 12:26:47.325"/>
+</for>
+<kw name="Should Contain Any" library="BuiltIn">
+<arg>${LISTA}</arg>
+<arg>${MENSAGEM_ERRO}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" starttime="20221127 12:26:47.326" endtime="20221127 12:26:47.326"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.256" endtime="20221127 12:26:47.326"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:46.461" endtime="20221127 12:26:47.327"/>
+</test>
+<test id="s1-t3" name="Cenário 3: Adicionar conta sem dados" line="35">
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.333" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:47.332" endtime="20221127 12:26:47.404"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.332" endtime="20221127 12:26:47.404"/>
+</kw>
+<kw name="Clica no menu Adicionar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_ADICIONAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.406" level="INFO">Clicking element 'xpath://a[.='Adicionar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:47.406" endtime="20221127 12:26:47.612"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.405" endtime="20221127 12:26:47.613"/>
+</kw>
+<kw name="Clica no botão Salvar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.620" level="INFO">Clicking element 'css = .btn'.</msg>
+<status status="PASS" starttime="20221127 12:26:47.619" endtime="20221127 12:26:47.858"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.618" endtime="20221127 12:26:47.859"/>
+</kw>
+<kw name="Checa alerta de erro contém Informe o nome da conta" library="keywords" sourcename="Checa alerta de erro contém ${MENSAGEM_ERRO}">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{LISTA_ELEMENTOS}</var>
+<arg>${ALERTA_ERRO}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.889" level="INFO">@{LISTA_ELEMENTOS} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="a92fd296-fd05-40b1-b801-f0b72670d429")&gt; ]</msg>
+<status status="PASS" starttime="20221127 12:26:47.861" endtime="20221127 12:26:47.889"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{LISTA}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221127 12:26:47.890" level="INFO">@{LISTA} = [ ]</msg>
+<status status="PASS" starttime="20221127 12:26:47.890" endtime="20221127 12:26:47.890"/>
+</kw>
+<for flavor="IN">
+<var>${elemento}</var>
+<value>@{LISTA_ELEMENTOS}</value>
+<iter>
+<var name="${elemento}">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="a92fd296-fd05-40b1-b801-f0b72670d429")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221127 12:26:47.893" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="a92fd296-fd05-40b1-b801-f0b72670d429")&gt;</msg>
+<status status="PASS" starttime="20221127 12:26:47.892" endtime="20221127 12:26:47.893"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto_do_elemento}</var>
+<arg>${elemento}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.931" level="INFO">${texto_do_elemento} = Informe o nome da conta</msg>
+<status status="PASS" starttime="20221127 12:26:47.894" endtime="20221127 12:26:47.931"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${LISTA}</arg>
+<arg>${texto_do_elemento}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221127 12:26:47.932" endtime="20221127 12:26:47.933"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.891" endtime="20221127 12:26:47.933"/>
+</iter>
+<status status="PASS" starttime="20221127 12:26:47.890" endtime="20221127 12:26:47.933"/>
+</for>
+<kw name="Should Contain Any" library="BuiltIn">
+<arg>${LISTA}</arg>
+<arg>${MENSAGEM_ERRO}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" starttime="20221127 12:26:47.933" endtime="20221127 12:26:47.934"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.860" endtime="20221127 12:26:47.934"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.329" endtime="20221127 12:26:47.936"/>
+</test>
+<test id="s1-t4" name="Cenário 4: Listar conta" line="44">
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:47.943" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:47.942" endtime="20221127 12:26:48.013"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.941" endtime="20221127 12:26:48.015"/>
+</kw>
+<kw name="Clica no menu Listar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_LISTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:48.020" level="INFO">Clicking element 'xpath = //a[.='Listar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:48.019" endtime="20221127 12:26:48.261"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.017" endtime="20221127 12:26:48.262"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:47.940" endtime="20221127 12:26:48.267"/>
+</test>
+<test id="s1-t5" name="Cenário 5: Editar conta" line="51">
+<kw name="Name" library="FakerLibrary">
+<var>${NOME_CONTA_ALTERADA_FAKER}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20221127 12:26:48.276" level="INFO">${NOME_CONTA_ALTERADA_FAKER} = Srta. Maria Cecília Almeida</msg>
+<status status="PASS" starttime="20221127 12:26:48.275" endtime="20221127 12:26:48.276"/>
+</kw>
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:48.281" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:48.279" endtime="20221127 12:26:48.374"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.277" endtime="20221127 12:26:48.375"/>
+</kw>
+<kw name="Clica no menu Listar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_LISTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:48.377" level="INFO">Clicking element 'xpath = //a[.='Listar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:48.376" endtime="20221127 12:26:48.596"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.375" endtime="20221127 12:26:48.596"/>
+</kw>
+<kw name="Clica no ícone de Editar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTAO_EDITAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:48.600" level="INFO">Clicking element '//tbody[1]/tr[1]//span[@class='glyphicon glyphicon-edit']'.</msg>
+<status status="PASS" starttime="20221127 12:26:48.598" endtime="20221127 12:26:48.855"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.597" endtime="20221127 12:26:48.857"/>
+</kw>
+<kw name="Altera a conta para ${NOME_CONTA_ALTERADA_FAKER}" library="conta_page" sourcename="Altera a conta para ${CONTA_ALTERADA}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_CONTA}</arg>
+<arg>${CONTA_ALTERADA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:48.860" level="INFO">Typing text 'Srta. Maria Cecília Almeida' into text field 'id=nome'.</msg>
+<status status="PASS" starttime="20221127 12:26:48.859" endtime="20221127 12:26:49.042"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.858" endtime="20221127 12:26:49.042"/>
+</kw>
+<kw name="Clica no botão Salvar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:49.045" level="INFO">Clicking element 'css = .btn'.</msg>
+<status status="PASS" starttime="20221127 12:26:49.044" endtime="20221127 12:26:49.345"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.043" endtime="20221127 12:26:49.348"/>
+</kw>
+<kw name="Checa alerta de sucesso contém Conta alterada com sucesso!" library="keywords" sourcename="Checa alerta de sucesso contém ${MENSAGEM_SUCESSO}">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mensagem_obtida}</var>
+<arg>${ALERTA_SUCESSO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:49.396" level="INFO">${mensagem_obtida} = Conta alterada com sucesso!</msg>
+<status status="PASS" starttime="20221127 12:26:49.351" endtime="20221127 12:26:49.397"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221127 12:26:49.398" endtime="20221127 12:26:49.399"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:49.399" endtime="20221127 12:26:49.400"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:49.400" endtime="20221127 12:26:49.402"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.349" endtime="20221127 12:26:49.403"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:48.273" endtime="20221127 12:26:49.405"/>
+</test>
+<test id="s1-t6" name="Cenário 6: Excluir conta" line="64">
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:49.410" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:49.409" endtime="20221127 12:26:49.477"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.409" endtime="20221127 12:26:49.478"/>
+</kw>
+<kw name="Clica no menu Listar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_LISTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:49.484" level="INFO">Clicking element 'xpath = //a[.='Listar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:49.483" endtime="20221127 12:26:49.720"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.478" endtime="20221127 12:26:49.721"/>
+</kw>
+<kw name="Clica no ícone de Excluir" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_EXCLUIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:49.725" level="INFO">Clicking element 'xpath=//tr[contains(td, "Conta de exclusão 2")]//a[contains(@href, "removerConta")]'.</msg>
+<status status="PASS" starttime="20221127 12:26:49.724" endtime="20221127 12:26:49.999"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.721" endtime="20221127 12:26:50.000"/>
+</kw>
+<kw name="Checa alerta de sucesso contém Conta removida com sucesso!" library="keywords" sourcename="Checa alerta de sucesso contém ${MENSAGEM_SUCESSO}">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${mensagem_obtida}</var>
+<arg>${ALERTA_SUCESSO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.071" level="INFO">${mensagem_obtida} = Conta removida com sucesso!</msg>
+<status status="PASS" starttime="20221127 12:26:50.004" endtime="20221127 12:26:50.071"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20221127 12:26:50.071" endtime="20221127 12:26:50.072"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MENSAGEM_SUCESSO}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:50.072" endtime="20221127 12:26:50.072"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${mensagem_obtida}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221127 12:26:50.073" endtime="20221127 12:26:50.074"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.002" endtime="20221127 12:26:50.074"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:49.407" endtime="20221127 12:26:50.075"/>
+</test>
+<test id="s1-t7" name="Cenário 7: Exclusão de conta sem sucesso" line="73">
+<kw name="Clica no menu contas" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.083" level="INFO">Clicking element 'css = .dropdown-toggle'.</msg>
+<status status="PASS" starttime="20221127 12:26:50.082" endtime="20221127 12:26:50.176"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.081" endtime="20221127 12:26:50.176"/>
+</kw>
+<kw name="Clica no menu Listar" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_CONTAS_LISTAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.178" level="INFO">Clicking element 'xpath = //a[.='Listar']'.</msg>
+<status status="PASS" starttime="20221127 12:26:50.177" endtime="20221127 12:26:50.425"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.177" endtime="20221127 12:26:50.426"/>
+</kw>
+<kw name="Clica no ícone de Excluir da conta em uso" library="conta_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BOTÃO_EXCLUIR_USO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.428" level="INFO">Clicking element 'xpath=//tr[contains(td, "Conta com movimentacao")]//a[contains(@href, "removerConta")]'.</msg>
+<status status="PASS" starttime="20221127 12:26:50.427" endtime="20221127 12:26:50.725"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.427" endtime="20221127 12:26:50.725"/>
+</kw>
+<kw name="Checa alerta de erro contém Conta em uso na movimentações" library="keywords" sourcename="Checa alerta de erro contém ${MENSAGEM_ERRO}">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{LISTA_ELEMENTOS}</var>
+<arg>${ALERTA_ERRO}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.753" level="INFO">@{LISTA_ELEMENTOS} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="03670b0a-25a0-4022-b6d4-1d213ce324be")&gt; ]</msg>
+<status status="PASS" starttime="20221127 12:26:50.728" endtime="20221127 12:26:50.754"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{LISTA}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20221127 12:26:50.755" level="INFO">@{LISTA} = [ ]</msg>
+<status status="PASS" starttime="20221127 12:26:50.755" endtime="20221127 12:26:50.755"/>
+</kw>
+<for flavor="IN">
+<var>${elemento}</var>
+<value>@{LISTA_ELEMENTOS}</value>
+<iter>
+<var name="${elemento}">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="03670b0a-25a0-4022-b6d4-1d213ce324be")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${elemento}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221127 12:26:50.756" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="b5168f63b18acc1cf70264084db15ccb", element="03670b0a-25a0-4022-b6d4-1d213ce324be")&gt;</msg>
+<status status="PASS" starttime="20221127 12:26:50.756" endtime="20221127 12:26:50.757"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${texto_do_elemento}</var>
+<arg>${elemento}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221127 12:26:50.794" level="INFO">${texto_do_elemento} = Conta em uso na movimentações</msg>
+<status status="PASS" starttime="20221127 12:26:50.757" endtime="20221127 12:26:50.795"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${LISTA}</arg>
+<arg>${texto_do_elemento}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20221127 12:26:50.795" endtime="20221127 12:26:50.797"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.756" endtime="20221127 12:26:50.798"/>
+</iter>
+<status status="PASS" starttime="20221127 12:26:50.755" endtime="20221127 12:26:50.798"/>
+</for>
+<kw name="Should Contain Any" library="BuiltIn">
+<arg>${LISTA}</arg>
+<arg>${MENSAGEM_ERRO}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" starttime="20221127 12:26:50.799" endtime="20221127 12:26:50.800"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.726" endtime="20221127 12:26:50.801"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.077" endtime="20221127 12:26:50.803"/>
+</test>
+<kw name="Encerra sessão" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221127 12:26:50.807" endtime="20221127 12:26:50.921"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:50.806" endtime="20221127 12:26:50.922"/>
+</kw>
+<status status="PASS" starttime="20221127 12:26:40.449" endtime="20221127 12:26:50.922"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Conta">Conta</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

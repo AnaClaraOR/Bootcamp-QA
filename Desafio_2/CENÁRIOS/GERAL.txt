@@ -1,0 +1,77 @@
+ >>>>> DESAFIO TESTES AUTOMATIZADOS
+
+Olá, conheça o Sr. Barriga (https://seubarriga.wcaquino.me/logar), um app revolucionário que vai ajudá-lo a manter suas finanças em dia.
+
+A equipe da BigBelly Tech deseja incrementar sua capacidade de controle de qualidade a fim de evitar que bugs atinjam seus clientes.
+
+A fim de salvar capacidade de seus QA’s para que atuem em cenários de maior complexidade, BBT decidiu implementar Automação de Testes 
+End to End em sua plataforma web e agora precisa da sua ajuda para desenvolver.
+
+Tendo decidido que será utilizado Robot Framework, a BBT demanda:
+
+    1 - Desenhe, utilizando Gherkin, 8 cenários de testes. Defina a prioridade que cada um desses cenários tem, avaliando a severidade 
+(Probabilidade x Impacto) de um bug ocorrer;
+    2 - Automatize a execução de pelo menos 5 dos cenários acima;
+    3 - BÔNUS: Encontre um cenário que apresente um erro, automatize esse cenário para que o report denuncie uma falha na aplicação;
+
+> FORMA DE ENTREGA:
+    - Arquivo de Keyword deve ter a priorização como comentário do cenário;
+    - Arquivo zipado com instruções de pré-requisitos e execução dos testes automatizados;
+
+> REQUISITOS: 1 - Desenhar 8 cenários de testes;
+              2 - Definir a prioridade dos cenários;
+              3 - Automatizar a execução de pelo menos 5 cenários;
+              4* - Encontrar um cenário que apresente erro;
+              5* - Automatizar o cenário de erro para o report denunciar a falha na aplicação;
+              6 - Arquivo Keyword deve ter priorização como comentário no cenário;
+              7 - Arquivo zipado;
+              8 - Arquivo com instruções de pré-requisitos e execução dos testes automatizados.
+
+>>> DEFINIÇÃO DE PRIORIDADE
+    Definição da prioridade dos cenários, avaliando a severidade (Probabilidade x Impacto) de um bug ocorrer;
+
+             _________________________________________
+            |              PROBABILIDADE              |
+            |_________________________________________|____
+            |  * BAIXA *  |  * MÉDIA *  |   * ALTA *  | I  |
+ ___________|_____________|_____________|_____________| M  |
+| * ALTO *  |    Média    |    Alta     |     Alta    | P  |
+|___________|_____________|_____________|_____________| A  |
+| * MÉDIO * |    Baixa    |    Média    |     Alta    | C  |
+|___________|_____________|_____________|_____________| T  |
+| * BAIXO * |    Baixa    |    Baixa    |    Média    | O  |
+|___________|_____________|_____________|_____________|____|
+
+* Nos cenários a ordem referente a prioridade: Probabilidade | Impacto
+
+>>> FUNCIONALIDADES E CENÁRIOS 
+
+> Funcionalidade: LOGIN
+    - Cenário 1: Login sem sucesso | Alta | Baixo
+    - Cenário 2: Login com email obrigatório | Média | Médio
+    - Cenário 3: Login com senha obrigatória | Média | Baixo
+    - Cenário 4: Login com campos obrigatórios | Alta | Baixo
+    - Cenário 5: Login com sucesso | Alta | Alto
+    
+> Funcionalidade: CADASTRO
+    - Cenário 1: Cadastro com sucesso | Alta | Alto
+    - Cenário 2: Cadastro sem sucesso | Alta | Alto
+    - Cenário 3: Cadastro sem o preenchimento do nome | Baixa | Baixo
+    - Cenário 4: Cadastro sem o preenchimento do email | Média | Baixo
+    - Cenário 5: Cadastro sem o preenchimento do senha | Baixa | Baixo
+    - Cenário 6: Cadastro sem o preenchimento dos campos | Média | Baixo
+    - Cenário 7: Cadastro só com o preenchimento do nome | Média | Baixo
+    - Cenário 8: Cadastro só com o preenchimento do email | Baixa | Baixo
+    - Cenário 9: Cadastro só com o preenchimento da senha | Baixa | Baixo
+   
+> Funcionalidade: HOME
+    - Cenário 1: Reset com sucesso | Média | Alto
+
+> Funcionalidade: CONTA
+    - Cenário 1: Adicionar conta | Baixa | Médio
+    - Cenário 2: Adicionar conta sem sucesso | Alta | Baixo
+    - Cenário 3: Adicionar conta sem dados | Baixa | Baixo
+    - Cenário 4: Listar conta | Baixa | Baixo
+    - Cenário 5: Editar conta | Alta | Baixo
+    - Cenário 6: Excluir conta | Baixa | Baixo
+    - Cenário 7: Exclusão de conta sem sucesso | Média | Alto
